@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 7916800573007235052}
   - component: {fileID: 6407251570975753937}
   - component: {fileID: 3052437104198699691}
-  - component: {fileID: 2325344518101281546}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -134,27 +133,6 @@ MonoBehaviour:
   _orientation: {fileID: 5247704636601403642}
   _cameraPosition: {fileID: 8563854343060948879}
   _playerRender: {fileID: 8937737782548880438}
---- !u!114 &2325344518101281546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4306656882447264336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7308bbb607737b45a8dd0e614f530e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToPlayer: 0.5
-  minPolar: -85
-  maxPolar: 85
-  sensibility: {x: 1, y: 1}
-  smoothing: 0.5
-  positionSmoothing: 0.5
-  invertPolar: 0
-  cursorVisible: 0
-  cursorLockMode: 1
 --- !u!1 &5643392855724080679
 GameObject:
   m_ObjectHideFlags: 0
