@@ -8,8 +8,8 @@ namespace Code.Gameplay.Character.Framework
     {
         [SerializeField] private Transform _orientation;
         public Transform Orientation => _orientation;
-        [SerializeField] private Transform _cameraPosition;
-        public Transform CameraPosition => _cameraPosition;
+        [SerializeField] private Transform _lookAt;
+        public Transform LookAt => _lookAt;
         [SerializeField] private Transform _playerRender;
         public Transform PlayerRender => _playerRender;
         

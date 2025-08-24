@@ -16,31 +16,34 @@ namespace Code.Gameplay.Character.Framework
         public LatitudeHandler OrientationRotation { get; }
         public UseGravityHandler UseGravity { get; }
         public PositionHandler PlayerPosition { get; }
-        public PositionHandler CameraPosition { get; }
+        public LatitudeHandler PlayerRotation { get; }
+        public LatitudeHandler LookAtRotation { get; }
+        
         public Invoker(Controller controller)
         {
             if(controller is not PlayerController playerController) return;
             
-            var _transform = playerController.transform;
-            var _orientation = playerController.Orientation;
-            var _playerRender = playerController.PlayerRender;
-            var _cameraPosition = playerController.CameraPosition;
-            var _rigidbody = playerController.GetComponent<Rigidbody>();
-            var _collider = playerController.GetComponent<CapsuleCollider>();
+            var transform = playerController.transform;
+            var orientation = playerController.Orientation;
+            var playerRender = playerController.PlayerRender;
+            var lookAt = playerController.LookAt;
+            var rigidbody = playerController.GetComponent<Rigidbody>();
+            var collider = playerController.GetComponent<CapsuleCollider>();
 
-            CenterPosition = new(_transform, _collider);
-            LocalScale = new(_transform);
-            Height = new(_collider);
-            Radius = new(_collider);
-            Velocity = new(_rigidbody);
-            AddForce = new(_rigidbody);
-            AddRigidbodyPositionAdd = new(_rigidbody);
-            Forward = new(_orientation);
-            Right = new(_orientation);
-            OrientationRotation = new(_orientation);
-            UseGravity = new(_rigidbody);
-            PlayerPosition = new(_playerRender);
-            CameraPosition = new(_cameraPosition);
+            CenterPosition = new(transform, collider);
+            LocalScale = new(transform);
+            Height = new(collider);
+            Radius = new(collider);
+            Velocity = new(rigidbody);
+            AddForce = new(rigidbody);
+            AddRigidbodyPositionAdd = new(rigidbody);
+            Forward = new(orientation);
+            Right = new(orientation);
+            OrientationRotation = new(orientation);
+            UseGravity = new(rigidbody);
+            PlayerPosition = new(playerRender);
+            PlayerRotation = new(playerRender);
+            LookAtRotation = new(lookAt);
         }
     }
 }
