@@ -17,7 +17,6 @@ namespace Code.Gameplay.Character.Framework
         public UseGravityHandler UseGravity { get; }
         public PositionHandler PlayerPosition { get; }
         public LatitudeHandler PlayerRotation { get; }
-        public LatitudeHandler LookAtRotation { get; }
         
         public Invoker(Controller controller)
         {
@@ -26,7 +25,6 @@ namespace Code.Gameplay.Character.Framework
             var transform = playerController.transform;
             var orientation = playerController.Orientation;
             var playerRender = playerController.PlayerRender;
-            var lookAt = playerController.LookAt;
             var rigidbody = playerController.GetComponent<Rigidbody>();
             var collider = playerController.GetComponent<CapsuleCollider>();
 
@@ -43,7 +41,6 @@ namespace Code.Gameplay.Character.Framework
             UseGravity = new(rigidbody);
             PlayerPosition = new(playerRender);
             PlayerRotation = new(playerRender);
-            LookAtRotation = new(lookAt);
         }
     }
 }
