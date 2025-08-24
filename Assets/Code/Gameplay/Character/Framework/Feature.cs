@@ -9,7 +9,7 @@ namespace Code.Gameplay.Character.Framework
         protected Invoker _invoker;
         protected IDependencyManager _dependencies;
         
-        public void InitializeFeature(Controller controller)
+        public virtual void InitializeFeature(Controller controller)
         {
             if(controller is PlayerController playerController)
             {
@@ -22,6 +22,6 @@ namespace Code.Gameplay.Character.Framework
         public virtual void UpdateFeature(){}
 
         public virtual void FixedUpdateFeature(){}
-        public void Apply(ref InputPayload @event){}
+        public virtual void Apply(ref InputPayload @event){}
     }
 }
