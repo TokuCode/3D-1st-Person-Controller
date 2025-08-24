@@ -10,4 +10,20 @@ namespace Code.Gameplay.Controls
         bool Sprint { get; }
         bool Crouch { get; }
     }
+    
+    public struct InputPayload
+    {
+        public Vector2 MouseDelta;
+        public Vector2 MoveDirection;
+        public bool Jump;
+        public bool Sprint;
+        public bool Crouch;
+        public UpdateContext Context;
+    }
+    
+    public enum UpdateContext
+    {
+        Update,
+        FixedUpdate
+    }
 }
