@@ -11,11 +11,11 @@ namespace Code.Gameplay.Character.Framework
     
     public class DependencyManager : IDependencyManager
     {
-        protected Dictionary<Type, IFeature> _features;
+        protected Dictionary<Type, IFeature> _features = new();
 
         public void TryAdd(IFeature feature)
         {
-            if (_features.ContainsKey(feature.GetType()))
+            if (!_features.ContainsKey(feature.GetType()))
             {
                 _features.Add(feature.GetType(), feature);
             }
